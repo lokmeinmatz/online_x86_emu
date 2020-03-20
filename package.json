@@ -1,0 +1,26 @@
+{
+  "name": "online_x86_emu",
+  "version": "0.1.0",
+  "description": "A online emulator (frontend: Typescript | backend: Rust / wasm) for x84 with vizualisations for educational purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokmeinmatz/online_x86_emu.git"
+  },
+  "keywords": [
+    "emulator",
+    "x86",
+    "typescript",
+    "rust",
+    "wasm"
+  ],
+  "author": "lokmeinmatz",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lokmeinmatz/online_x86_emu/issues"
+  },
+  "homepage": "https://github.com/lokmeinmatz/online_x86_emu#readme"
+}
