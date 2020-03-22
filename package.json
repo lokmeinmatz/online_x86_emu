@@ -4,7 +4,8 @@
   "description": "A online emulator (frontend: Typescript | backend: Rust / wasm) for x84 with vizualisations for educational purposes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/lokmeinmatz/online_x86_emu/issues"
   },
-  "homepage": "https://github.com/lokmeinmatz/online_x86_emu#readme"
+  "homepage": "https://github.com/lokmeinmatz/online_x86_emu#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
