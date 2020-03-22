@@ -1,0 +1,11 @@
+VM:
+  ☐ implement basic memory
+  ☐ find simplest x64 program to execute
+
+
+UI:
+  ☐ use css framework
+  ☐ create basic memory view
+    ☐ seperate fixed stack view and heap by address?
+    ☐ edit memory cells by select or by command?
+  ☐ edit registers and write to vm

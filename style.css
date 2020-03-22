@@ -1,0 +1,9 @@
+#registers {
+    list-style: none;
+    width: 100px;
+}
+
+#registers > li {
+    display: flex;
+    justify-content: space-between;
+}

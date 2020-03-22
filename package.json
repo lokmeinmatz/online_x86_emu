@@ -26,5 +26,8 @@
   "homepage": "https://github.com/lokmeinmatz/online_x86_emu#readme",
   "devDependencies": {
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "tsdom": "^0.6.9"
   }
 }
