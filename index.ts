@@ -1,6 +1,6 @@
 import * as vm from './src/vm'
-import tsdom from 'tsdom'
-
+import * as regTable from './src/regTable'
+import * as popups from './src/popups'
 
 let initialized = false
 
@@ -14,13 +14,13 @@ function init() {
     console.log('loaded')
     vm.init(true)
 
-    let regList = tsdom('#registers')
-    const regState = vm.getIntRegisterState()
-    for (let regName of vm.regNames) {
-        regList.append(`<li><p>${regName}</p><p>0x${regState[regName].toString(16)}</p></li>`)
-    }
-
+    popups.init()
+    regTable.init()
+    regTable.updateTable()
     vm.test()
+    regTable.updateTable()
+
+
 }
 
 window.addEventListener('load', init)

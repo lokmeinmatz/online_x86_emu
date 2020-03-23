@@ -4,8 +4,8 @@ VM:
 
 
 UI:
-  ☐ use css framework
+  ✔ use css framework @started(20-03-23 11:43) @done(20-03-23 11:43) @lasted(2s)
   ☐ create basic memory view
     ☐ seperate fixed stack view and heap by address?
     ☐ edit memory cells by select or by command?
-  ☐ edit registers and write to vm
+  ✔ edit registers and write to vm @started(20-03-23 12:49) @done(20-03-23 17:35) @lasted(4h46m47s)

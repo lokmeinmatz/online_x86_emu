@@ -26,26 +26,36 @@ export const regNames = [
     "r12",
     "r13",
     "r14",
-    "r15"
+    "r15",
+    "rip",
+    "rflags"
 ]
 
+const regAddresses = {}
+
+for (let i = 0; i < regNames.length; i++) {
+    regAddresses[regNames[i]] = 128 + (i * 8)
+}
+
 export interface IntRegisters {
-    rax: number,
-    rbx: number,
-    rcx: number,
-    rdx: number,
-    rbp: number, // base pointer
-    rsi: number,
-    rdi: number,
-    rsp: number,
-    r8:  number,
-    r9:  number,
-    r10: number,
-    r11: number,
-    r12: number,
-    r13: number,
-    r14: number,
-    r15: number
+    rax: bigint,
+    rbx: bigint,
+    rcx: bigint,
+    rdx: bigint,
+    rbp: bigint, // base pointer
+    rsi: bigint,
+    rdi: bigint,
+    rsp: bigint,
+    r8:  bigint,
+    r9:  bigint,
+    r10: bigint,
+    r11: bigint,
+    r12: bigint,
+    r13: bigint,
+    r14: bigint,
+    r15: bigint,
+    rip: bigint,
+    rflags: bigint
 }
 
 export function getVmGeneralInfos(): VmGeneralInfos {
@@ -57,7 +67,19 @@ export function getVmGeneralInfos(): VmGeneralInfos {
     }
 }
 
-export function getIntRegisterState(): IntRegisters {
+export function getIntRegister(regName: string): bigint {
+    const addr = regAddresses[regName]
+    const val_arr = new BigUint64Array(vm.memory.buffer.slice(addr, addr + 8))
+    return val_arr[0]
+}
+
+export function setIntRegister(regName: string, newVal: bigint) {
+    const addr = regAddresses[regName] / 8
+    const arr = new BigUint64Array(vm.memory.buffer)
+    arr[addr] = newVal
+}
+
+export function getAllIntRegisters(): IntRegisters {
     let u64mem = new BigUint64Array(vm.memory.buffer.slice(128, 128 + 16 * 8))
 
     let regs = {}
@@ -92,7 +114,7 @@ export function test() {
 
 
     let infos = getVmGeneralInfos()
-    let regs = getIntRegisterState()
+    let regs = getAllIntRegisters()
     console.log(infos)
     console.log(regs)
 

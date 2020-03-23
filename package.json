@@ -25,6 +25,13 @@
   },
   "homepage": "https://github.com/lokmeinmatz/online_x86_emu#readme",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-proposal-private-methods": "^7.8.3",
+    "@babel/plugin-syntax-bigint": "^7.8.3",
+    "@types/jquery": "^3.3.33",
     "typescript": "^3.8.3"
   },
   "dependencies": {

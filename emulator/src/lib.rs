@@ -27,7 +27,9 @@ struct IntRegisters {
     r12: reg_type,
     r13: reg_type,
     r14: reg_type,
-    r15: reg_type
+    r15: reg_type,
+    rip: reg_type,
+    rflags: reg_type
 }
 
 fn int_registers() -> &'static mut IntRegisters {
@@ -44,7 +46,7 @@ fn general_info() -> &'static mut GeneralInfo {
 
 #[no_mangle]
 pub fn init(is_x64: bool) -> usize {
-    assert!(size_of::<IntRegisters>() == 128);
+    assert!(size_of::<IntRegisters>() == 8 * 18);
     let mut info = general_info();
     info.is_x64 = is_x64;
 
